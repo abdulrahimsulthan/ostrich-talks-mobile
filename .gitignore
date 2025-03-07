@@ -32,6 +32,7 @@ yarn-error.*
 # local env files
 .env*.local
 ostrich-talks-firebase-adminsdk-*.json
+google-services.json
 
 # typescript
 *.tsbuildinfo
