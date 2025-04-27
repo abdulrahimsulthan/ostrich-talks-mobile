@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import requestUserPermission from "./services/firebase/requestUserPermission";
+import requestUserPermission from "../services/firebase/requestUserPermission";
 import { Text, View } from "react-native";
 
 export default function Index() {
