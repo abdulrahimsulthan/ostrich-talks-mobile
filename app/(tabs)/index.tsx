@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import requestUserPermission from "../../services/firebase/requestUserPermission";
-import { Text, View } from "react-native";
+import { View } from "react-native";
+
+import Head from "@/components/heads";
 
 export default function Index() {
   useEffect(() => {
@@ -8,8 +10,9 @@ export default function Index() {
   }, [])
 
   return (
-    <View className="flex-1 justify-center items-center bg-background">
-      <Text className="text-5xl text-dark-200 font-bold">Welcome!</Text>
+    <View className="flex-1 items-center bg-background">
+      <Head />
     </View>
   );
 }
+
