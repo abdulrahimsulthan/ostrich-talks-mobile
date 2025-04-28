@@ -6,17 +6,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#e17055",
-        textPrimary: "#784e2d",
-        textSecondary: "#a58e7c",
-        textDark: "#50372a",
-        placeholderText: "#767676",
-        background: "#ede1d1",
-        cardBackground: "#faf5eb",
-        inputBackground: "#f7f2ea",
-        border: "#e2d6c1",
-        white: "#ffffff",
-        black: "#000000",
+        primary: '#e17055',         // 🔥 Your chosen primary color
+        primaryDark: '#c94d34',      // Darker version for pressed states
+        lightPrimary: '#f5b7a6',     // Light soft background accent
+        background: '#FFFFFF',       // Main app background
+        textPrimary: '#333333',      // Primary text color (slightly darker for better contrast)
+        textSecondary: '#777777',    // Secondary text (subtle)
+        border: '#E5E5E5',           // Borders and dividers
+        warning: '#FF4B4B',          // Errors, criticals
+        highlight: '#FFD600',        // For XP boosts, badges (keep yellow)
+        link: '#3498db',             // A nice calm blue for links
+        accent: '#a29bfe',           // Purple/blue fun accent
       }
     },
   },
