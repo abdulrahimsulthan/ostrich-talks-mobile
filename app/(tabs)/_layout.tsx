@@ -17,9 +17,8 @@ export default function TabLayout() {
                 paddingTop: 10 
             }
         }}>
-            
             <Tabs.Screen
-                name="index"
+                name="home"
                 options={{
                     title: 'Home',
                     tabBarIcon: ({ color }) => <MaterialIcons size={28} name="home" color={color} />,
@@ -49,8 +48,6 @@ export default function TabLayout() {
                     title: 'Feed',
                     tabBarIcon: ({ color }) => <MaterialIcons size={28} name="notifications" color={color} />
                 }} />
-
-
         </Tabs>
     );
 }
