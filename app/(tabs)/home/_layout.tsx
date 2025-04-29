@@ -2,22 +2,28 @@ import { Stack, Tabs } from "expo-router";
 
 export default function HomeLayout() {
     return (
-        <Stack screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="index" />
+        <Stack screenOptions={{ headerShown: true }}>
+            <Stack.Screen name="index" options={{ headerShown: false} }/>
+
             <Stack.Screen name="streak" options={{
-                presentation: "formSheet",
+                presentation: "fullScreenModal",
+                title: "Streak",
             }}/>
             <Stack.Screen name="shop" options={{
-                presentation: "formSheet",
+                presentation: "fullScreenModal",
+                title: "Shop",
             }}/>
             <Stack.Screen name="life" options={{
-                presentation: "formSheet",
+                presentation: "fullScreenModal",
+                title: "Life",
             }}/>
             <Stack.Screen name="plan" options={{
-                presentation: "formSheet",
+                presentation: "fullScreenModal",
+                title: "Plan",
             }}/>
             <Stack.Screen name="score" options={{
-                presentation: "formSheet",
+                presentation: "fullScreenModal",
+                title: "Score",
             }}/>
         </Stack>
     )
