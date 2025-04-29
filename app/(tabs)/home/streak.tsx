@@ -44,7 +44,6 @@ const streak = () => {
         <View className='flex-1 items-center justify-between p-4 rounded-lg shadow-md my-4 w-[90%]'>
           <View className='w-full flex-row items-center justify-between p-2'>
             <Text className='text-xl text-primary'>Streak Goal</Text>
-
           </View>
           <View className='flex-row mb-2 justify-between items-center w-full p-2'>
             <Text className='text-xl text-wrap w-4/5'>You're 3 days into your 30 days goal</Text>
@@ -60,6 +59,19 @@ const streak = () => {
           <View className='flex-row justify-end items-center w-full p-2'>
             <Text className='text-lg text-primary'>Set a goal</Text>
             <MaterialIcons name="arrow-forward-ios" size={24} color={colors.primary} />
+          </View>
+        </View>
+
+        {/* Streak Society */}
+        <View className='flex-1 items-center justify-between p-4 rounded-lg shadow-md my-4 w-[90%]'>
+          <View className='w-full flex-row items-center justify-between p-2'>
+            <Text className='text-xl text-textSecondary'>Streak Society</Text>
+          </View>
+          <View className='flex-row mb-2 justify-between items-center w-full p-2'>
+            <MaterialIcons name="lock" size={50} color={colors.textSecondary} />
+            <Text className='text-xl text-wrap w-4/5 text-textSecondary'>
+              Reach a 7 day streak to join the Streak Society and earn exclusive rewards.
+            </Text>
           </View>
         </View>
 
