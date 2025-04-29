@@ -4,14 +4,16 @@ import { TouchableOpacity, View, Text } from "react-native";
 import { useRouter } from "expo-router";
 
 const buttons: {
-  icon: "monetization-on" | "whatshot" | "favorite";
+  icon: "monetization-on" | "whatshot" | "favorite" | "sell";
   label: string;
   active: boolean;
-  path: "/home/shop" | "/home/streak" | "/home/life";
+  path: "/home/shop" | "/home/streak" | "/home/life" | "/home/plan";
 }[] = [
     { icon: 'monetization-on', label: '1', active: true, path: "/home/shop" },
     { icon: 'whatshot', label: '2', active: false, path: "/home/streak" },
     { icon: 'favorite', label: '3', active: false, path: "/home/life" },
+    { icon: 'sell', label: 'PRO', active: false, path: "/home/plan" },
+   
   ];
 
 

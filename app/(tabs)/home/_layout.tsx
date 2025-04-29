@@ -13,6 +13,9 @@ export default function HomeLayout() {
             <Stack.Screen name="life" options={{
                 presentation: "formSheet",
             }}/>
+            <Stack.Screen name="plan" options={{
+                presentation: "formSheet",
+            }}/>
         </Stack>
     )
 };
