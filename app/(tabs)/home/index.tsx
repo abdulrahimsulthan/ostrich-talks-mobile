@@ -40,9 +40,18 @@ export default function Index() {
         ))}
       </View>
 
+      {/* TODO: Motivative banner */}
+      <View className="w-[90%] h-20 bg-primary rounded-md flex-row items-center justify-between px-4">
+        <View>
+          <Text className="text-white text-lg">Fiery Streak!</Text>
+          <Text className="text-white">1 more lesson to get a hotter streak!</Text>
+        </View>
+        <MaterialIcons name="whatshot" size={24} color="white" />
+      </View>
+
       {/* TODO: Lession Content */}
       <View className="flex-1 items-center justify-center w-full px-4">
-        <Text className="text-textPrimary">Welcome to the Home Screen!</Text>
+        <Text className="text-textPrimary">Welcome to Ostrich Talks!</Text>
         <Text className="text-textSecondary">This is where you can find your lessons.</Text>
         <Text className="text-textSecondary">Click on the buttons below to mock levels.</Text>
 
