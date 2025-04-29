@@ -40,7 +40,29 @@ const streak = () => {
         </View>
       </View>
      
-      
+      {/* Streak Goal */}
+      <View className='flex-1 items-center justify-between p-4 rounded-lg shadow-md my-4 w-[90%]'>
+        <View className='w-full flex-row items-center justify-between p-2'>
+            <Text className='text-xl text-primary'>Streak Goal</Text>
+           
+        </View>
+        <View className='flex-row mb-2 justify-between items-center w-full p-2'>
+          <Text className='text-xl text-wrap w-4/5'>You're 3 days into your 30 days goal</Text>
+          <MaterialIcons name="surfing" size={40} color={colors.primary} />
+          
+        </View>
+        <View className='flex-row mb-2'>
+          <View className='flex-1 mx-4 h-3 bg-gray-300 rounded-full'>
+              <View className='h-3 bg-primary rounded-full' style={{ width: '10%' }} />
+          </View>
+        </View>
+        
+          <View className='flex-row justify-end items-center w-full p-2'>
+            <Text className='text-lg text-primary'>Set a goal</Text>
+            <MaterialIcons name="arrow-forward-ios" size={24} color={colors.primary} />
+          </View>
+      </View>
+
     </View>
   </ScrollView>
   )
