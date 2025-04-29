@@ -1,7 +1,40 @@
-import { View, Text, ScrollView } from 'react-native'
+import { View, Text, ScrollView, FlatList } from 'react-native'
 import React from 'react'
 import { Ionicons, MaterialIcons } from '@expo/vector-icons'
 import colors from '@/constants/colors'
+interface invites {
+  id: string;
+  title: string;
+  icon: "add";
+}
+const invites: invites[] = [
+  {
+    id: '1',
+    title: 'Invite a friend',
+    icon: 'add',
+  },
+  {
+    id: '2',
+    title: 'Invite a friend',
+    icon: 'add',
+  },
+  {
+    id: '3',
+    title: 'Invite a friend',
+    icon: 'add',
+  },
+  {
+    id: '4',
+    title: 'Invite a friend',
+    icon: 'add',
+  },
+  {
+    id: '5',
+    title: 'Invite a friend',
+    icon: 'add',
+  }
+];
+
 
 const streak = () => {
   return (
@@ -73,6 +106,32 @@ const streak = () => {
               Reach a 7 day streak to join the Streak Society and earn exclusive rewards.
             </Text>
           </View>
+        </View>
+
+        {/* Friend Streaks */}
+        <View className='flex-1 items-center justify-between p-4 rounded-lg shadow-md my-4 w-[90%]'>
+          <View className='w-full flex-row items-center justify-between p-2'>
+            <Text className='text-xl text-textSecondary'>Friend Streaks</Text>
+          </View>
+
+          <View className='flex-row mb-2 justify-between items-center w-full p-2'>
+            <MaterialIcons name="lock" size={50} color={colors.textSecondary} />
+            <Text className='text-xl text-wrap w-4/5 text-textSecondary'>
+              You have no friends with streaks yet. Add some friends to see their streaks.
+            </Text>
+          </View>
+
+          {
+            invites.map((item) =>
+              <View className='flex-row mb-2 justify-start items-center w-full p-2' key={item.id}>
+                <MaterialIcons name={item.icon} size={30} color={colors.textSecondary} />
+                <Text className='text-lg text-wrap ml-2 text-textSecondary'>
+                  {item.title}
+                </Text>
+              </View>
+            )
+          }
+
         </View>
 
       </View>
