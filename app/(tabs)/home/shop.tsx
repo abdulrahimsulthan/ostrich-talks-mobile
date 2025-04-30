@@ -47,7 +47,7 @@ const shop = () => {
               <Text className='font-bold text-xl'>Free Chest</Text>
               <Text className='text-wrap'>Watch an ad to earn up to 15 gems.</Text>
               <TouchableOpacity className='bg-primary rounded-md px-4 py-2 mt-2 '>
-                <Text className='text-lg text-center text-white font-bold'>CLAIM CHEST</Text>\
+                <Text className='text-lg text-center text-white font-bold'>CLAIM CHEST</Text>
               </TouchableOpacity>
             </View>
           </View>
