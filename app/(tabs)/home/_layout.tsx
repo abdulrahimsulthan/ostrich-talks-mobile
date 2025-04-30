@@ -13,9 +13,9 @@ export default function HomeLayout() {
                 presentation: "fullScreenModal",
                 title: "Shop",
             }}/>
-            <Stack.Screen name="life" options={{
+            <Stack.Screen name="heart" options={{
                 presentation: "fullScreenModal",
-                title: "Life",
+                title: "Hearts",
             }}/>
             <Stack.Screen name="plan" options={{
                 presentation: "fullScreenModal",

@@ -7,12 +7,12 @@ const buttons: {
   icon: "monetization-on" | "whatshot" | "favorite" | "sell" | "score";
   label: string;
   active: boolean;
-  path: "/home/shop" | "/home/streak" | "/home/life" | "/home/plan" | "/home/score";
+  path: "/home/shop" | "/home/streak" | "/home/heart" | "/home/plan" | "/home/score";
 }[] = [
     { icon: 'score', label: '26', active: false, path: "/home/score" },
     { icon: 'monetization-on', label: '1', active: false, path: "/home/shop" },
     { icon: 'whatshot', label: '2', active: false, path: "/home/streak" },
-    { icon: 'favorite', label: '3', active: false, path: "/home/life" },
+    { icon: 'favorite', label: '3', active: false, path: "/home/heart" },
     { icon: 'sell', label: 'PRO', active: true, path: "/home/plan" },
    
   ];

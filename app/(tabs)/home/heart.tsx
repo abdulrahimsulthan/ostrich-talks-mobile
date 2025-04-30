@@ -20,7 +20,7 @@ const getHearts = (): Heart[] => {
   ))
 }
 
-const life = () => {
+const Heart = () => {
   return (
     <ScrollView className='flex-1 bg-background'>
       <View className='bg-background items-center justify-center'>
@@ -36,7 +36,7 @@ const life = () => {
           <View className='flex-row  w-[90%] items-center justify-around p-2 mb-2'>
             {
               getHearts().map((item) => (
-                <MaterialIcons name={item.icon} size={24} color={item.color} />
+                <MaterialIcons name={item.icon} size={24} color={item.color} key={item.id}/>
               ))
             }
           </View>
@@ -84,4 +84,4 @@ const life = () => {
   )
 }
 
-export default life
+export default Heart
