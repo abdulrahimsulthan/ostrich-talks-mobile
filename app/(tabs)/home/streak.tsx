@@ -61,7 +61,7 @@ const streak = () => {
 
         {/* streak history */}
         <View className='flex-1 items-center justify-between bg-primary p-4 rounded-lg shadow-md my-4 w-[90%]'>
-          <View className='w-full flex-row items-center justify-between'>
+          <View className='w-full flex-row items-center justify-between mb-2'>
             <Text className='text-lg text-white'>Streak Calendar</Text>
             <MaterialIcons name="history" size={24} color="white" />
           </View>
@@ -75,7 +75,7 @@ const streak = () => {
 
         {/* Streak Goal */}
         <View className='flex-1 items-center justify-between p-4 rounded-lg shadow-md my-4 w-[90%]'>
-          <View className='w-full flex-row items-center justify-between p-2'>
+          <View className='w-full flex-row items-center justify-between p-2 mb-2'>
             <Text className='text-xl text-primary'>Streak Goal</Text>
           </View>
           <View className='flex-row mb-2 justify-between items-center w-full p-2'>
@@ -97,7 +97,7 @@ const streak = () => {
 
         {/* Streak Society */}
         <View className='flex-1 items-center justify-between p-4 rounded-lg shadow-md my-4 w-[90%]'>
-          <View className='w-full flex-row items-center justify-between p-2'>
+          <View className='w-full flex-row items-center justify-between p-2 mb-2'>
             <Text className='text-xl text-textSecondary'>Streak Society</Text>
           </View>
           <View className='flex-row mb-2 justify-between items-center w-full p-2'>
@@ -110,7 +110,7 @@ const streak = () => {
 
         {/* Friend Streaks */}
         <View className='flex-1 items-center justify-between p-4 rounded-lg shadow-md my-4 w-[90%]'>
-          <View className='w-full flex-row items-center justify-between p-2'>
+          <View className='w-full flex-row items-center justify-between p-2 mb-2'>
             <Text className='text-xl text-textSecondary'>Friend Streaks</Text>
           </View>
 
