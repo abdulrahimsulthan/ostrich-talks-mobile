@@ -73,10 +73,28 @@ const shop = () => {
 
         </View>
 
+        {/* TODO: Buy Gems in app purchase */}
+
+        {/* Power-Ups */}
+        <View className='flex-1 my-4 bg-background justify-center'>
+          <View className='mb-2 w-[90%]'>
+            <Text className='text-xl font-bold'>Power-Ups</Text>
+          </View>
+          <View className='flex-row items-center justify-between p-6 rounded-lg shadow-md mb-2 w-[90%] gap-4'>
+            <MaterialIcons name="more-time" size={60} color={colors.primary} />
+            <View className='w-[75%]'>
+              <Text className='font-bold text-lg'>Timer Boost</Text>
+              <Text className='text-wrap'>Add extra time and beat the clock on timed challenges</Text>
+              <View className='flex-row items-center mt-2 gap-2'>
+                <MaterialIcons name="monetization-on" size={20} color={colors.primary} />
+                <Text className='text-lg'>450</Text>
+              </View>
+            </View>
+          </View>
+
+        </View>
+
       </View>
-
-
-
     </ScrollView>
   )
 }
