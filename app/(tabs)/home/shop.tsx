@@ -47,9 +47,9 @@ const shop = () => {
               <Text className='font-bold text-lg'>Free Chest</Text>
               <Text className='text-wrap'>Watch an ad to earn up to 15 gems.</Text>
               <View className='flex-row items-center mt-2 gap-2'>
-              <TouchableOpacity className='bg-primary rounded-md px-4 py-2 mt-2 '>
-                <Text className='text-center text-white font-bold'>CLAIM CHEST</Text>
-              </TouchableOpacity>
+                <TouchableOpacity className='bg-primary rounded-md px-4 py-2 mt-2 '>
+                  <Text className='text-center text-white font-bold'>CLAIM CHEST</Text>
+                </TouchableOpacity>
               </View>
             </View>
           </View>
@@ -109,9 +109,9 @@ const shop = () => {
               <Text className='font-bold text-lg'>Unlimited Hearts</Text>
               <Text className='text-wrap'>Never run out of hearts with Super!</Text>
               <View className='flex-row items-center mt-2 gap-2'>
-              <TouchableOpacity className='bg-primary rounded-md px-4 py-2 mt-2 '>
-                <Text className='text-center text-white font-bold'>Free Trial</Text>
-              </TouchableOpacity>
+                <TouchableOpacity className='bg-primary rounded-md px-4 py-2 mt-2 '>
+                  <Text className='text-center text-white font-bold'>Free Trial</Text>
+                </TouchableOpacity>
               </View>
             </View>
           </View>
@@ -122,9 +122,9 @@ const shop = () => {
               <Text className='font-bold text-lg'>Heart Refill</Text>
               <Text className='text-wrap'>Get full hearts so you can worry less about making mistake in a lession</Text>
               <View className='flex-row items-center mt-2 gap-2'>
-              <TouchableOpacity className='bg-primary rounded-md px-4 py-2 mt-2 '>
-                <Text className='text-center text-white font-bold'>Fill Hearts</Text>
-              </TouchableOpacity>
+                <TouchableOpacity className='bg-primary rounded-md px-4 py-2 mt-2 '>
+                  <Text className='text-center text-white font-bold'>Fill Hearts</Text>
+                </TouchableOpacity>
               </View>
             </View>
           </View>
@@ -142,9 +142,9 @@ const shop = () => {
               <Text className='font-bold text-lg'>Redeem a promo code</Text>
               <Text className='text-wrap'>Enter a promo code to earn rewards</Text>
               <View className='flex-row items-center mt-2 gap-2'>
-              <TouchableOpacity className='bg-primary rounded-md px-4 py-2 mt-2 '>
-                <Text className='text-center text-white font-bold'>Redeem</Text>
-              </TouchableOpacity>
+                <TouchableOpacity className='bg-primary rounded-md px-4 py-2 mt-2 '>
+                  <Text className='text-center text-white font-bold'>Redeem</Text>
+                </TouchableOpacity>
               </View>
             </View>
           </View>
