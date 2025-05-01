@@ -2,6 +2,7 @@ import { View, Text, ScrollView, FlatList } from 'react-native'
 import React from 'react'
 import { Ionicons, MaterialIcons } from '@expo/vector-icons'
 import colors from '@/constants/colors'
+import { TouchableOpacity } from 'react-native';
 interface invites {
   id: string;
   title: string;
@@ -55,7 +56,11 @@ const streak = () => {
           <Ionicons name="timer-outline" size={24} color="red" />
           <View className='ml-2 p-2'>
             <Text className='text-textPrimary'>3 hours until your streak resets!</Text>
-            <Text className='text-textPrimary mt-2'>START LESSION</Text>
+            <View className='flex-row items-center mt-2 gap-2'>
+              <TouchableOpacity className='bg-primary rounded-md px-4 py-2 mt-2 '>
+                <Text className='text-center text-white font-bold'>Start Lession</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
 
