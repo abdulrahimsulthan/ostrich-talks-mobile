@@ -6,8 +6,8 @@ import { Text, View } from "react-native";
 export default function HomeLayout() {
     const shopRight = () =>
         <View className="flex-row items-center justify-center gap-2">
-            <MaterialIcons name="diamond" size={20} color={colors.primary} />
-            <Text className="text-textSecondary">100</Text>
+            <MaterialIcons name="monetization-on" size={24} color={colors.primary} />
+            <Text className="text-textSecondary font-bold text-lg">1000</Text>
         </View>
 
 
