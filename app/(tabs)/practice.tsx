@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const feed = () => {
+const practice = () => {
   return (
     <View>
-      <Text>feed</Text>
+      <Text>practice</Text>
     </View>
   )
 }
 
-export default feed
+export default practice
