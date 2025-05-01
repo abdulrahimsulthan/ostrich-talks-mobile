@@ -53,6 +53,25 @@ const shop = () => {
           </View>
         </View>
 
+        {/* Streak */}
+        <View className='flex-1 my-4 bg-background justify-center'>
+          <View className='mb-2 w-[90%]'>
+            <Text className='text-xl font-bold'>Streak</Text>
+          </View>
+          <View className='flex-row items-center justify-between p-6 rounded-lg shadow-md mb-2 w-[90%] gap-4'>
+            <MaterialIcons name="whatshot" size={60} color="lightblue" />
+            <View className='w-[75%]'>
+              <Text className='font-bold text-lg'>Streak Freeze</Text>
+              <Text className='text-wrap'>Protect your streak if you miss a day of practice.</Text>
+              <Text className='text-wrap'>Equip up to 2 at once.</Text>
+              <View className='flex-row items-center mt-2 gap-2'>
+                <MaterialIcons name="monetization-on" size={20} color={colors.primary} />
+                <Text className='text-lg'>250</Text>
+              </View>
+            </View>
+          </View>
+
+        </View>
 
       </View>
 
