@@ -46,9 +46,11 @@ const shop = () => {
             <View className='w-[75%]'>
               <Text className='font-bold text-lg'>Free Chest</Text>
               <Text className='text-wrap'>Watch an ad to earn up to 15 gems.</Text>
+              <View className='flex-row items-center mt-2 gap-2'>
               <TouchableOpacity className='bg-primary rounded-md px-4 py-2 mt-2 '>
                 <Text className='text-center text-white font-bold'>CLAIM CHEST</Text>
               </TouchableOpacity>
+              </View>
             </View>
           </View>
         </View>
@@ -92,6 +94,40 @@ const shop = () => {
             </View>
           </View>
 
+        </View>
+
+        {/* Hearts */}
+        <View className='flex-1 my-4 bg-background justify-center'>
+          <View className='mb-2 w-[90%]'>
+            <Text className='text-xl font-bold'>Hearts</Text>
+          </View>
+
+          {/* CTA for Pro or FreeTrail if avail */}
+          <View className='flex-row items-center justify-between p-6 rounded-lg shadow-md mb-2 w-[90%] gap-4'>
+            <MaterialIcons name="favorite" size={60} color={colors.primary} />
+            <View className='w-[75%]'>
+              <Text className='font-bold text-lg'>Unlimited Hearts</Text>
+              <Text className='text-wrap'>Never run out of hearts with Super!</Text>
+              <View className='flex-row items-center mt-2 gap-2'>
+              <TouchableOpacity className='bg-primary rounded-md px-4 py-2 mt-2 '>
+                <Text className='text-center text-white font-bold'>Free Trial</Text>
+              </TouchableOpacity>
+              </View>
+            </View>
+          </View>
+
+          <View className='flex-row items-center justify-between p-6 rounded-lg shadow-md mb-2 w-[90%] gap-4'>
+            <MaterialIcons name="favorite" size={60} color={colors.primary} />
+            <View className='w-[75%]'>
+              <Text className='font-bold text-lg'>Heart Refill</Text>
+              <Text className='text-wrap'>Get full hearts so you can worry less about making mistake in a lession</Text>
+              <View className='flex-row items-center mt-2 gap-2'>
+              <TouchableOpacity className='bg-primary rounded-md px-4 py-2 mt-2 '>
+                <Text className='text-center text-white font-bold'>Fill Hearts</Text>
+              </TouchableOpacity>
+              </View>
+            </View>
+          </View>
         </View>
 
       </View>
