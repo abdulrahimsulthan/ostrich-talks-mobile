@@ -1,7 +1,8 @@
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native'
 import React from 'react'
 import Profile from "@/assets/avatars/profile.svg"
-import { MaterialIcons } from '@expo/vector-icons'
+import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons'
+import colors from '@/constants/colors'
 
 const profile = () => {
   return (
@@ -10,7 +11,7 @@ const profile = () => {
 
         {/* Header */}
         <View className='flex-1 items-center justify-center mt-4 mb-2 p-4 bg-background'>
-          <View className='h-40  w-40 rounded-full shadow-lg items-center justify-center'>
+          <View className='h-40  w-40 rounded-full shadow-md items-center shadow-primary justify-center'>
             <Profile width={100} height={100} />
           </View>
           <Text className="my-2">John Doe</Text>
@@ -41,6 +42,58 @@ const profile = () => {
             <TouchableOpacity>
               <MaterialIcons className='px-4 py-3 bg-primary rounded-full' name="share" size={24} color="white" />
             </TouchableOpacity>
+          </View>
+        </View>
+        {/* TODO: Friend Suggestions */}
+
+        {/* Overview */}
+        <View className='w-[90%] flex-1 my-4 bg-background justify-center'>
+          <View className='mb-2'>
+            <Text className='text-xl font-bold'>Overview</Text>
+          </View>
+          <View className='mb-2'>
+            <View className='mb-5 flex-row w-full items-center justify-around gap-4'>
+              {/* Day Streak */}
+              <View className='w-[45%] flex-row items-center gap-2 rounded-xl border border-primary px-4 py-3'>
+                <MaterialIcons name='whatshot' size={24} color={colors.primary} />
+                <View className='gap-1'>
+                  <Text>10</Text>
+                  <Text>Day Streak</Text>
+                </View>
+              </View>
+
+              {/* Total XP */}
+              <View className='w-[45%] flex-row items-center gap-2 rounded-xl border border-primary px-4 py-3'>
+                <MaterialCommunityIcons name="lightning-bolt" size={24} color={colors.primary} />
+                <View className='gap-1'>
+                  <Text>6093</Text>
+                  <Text>Total XP</Text>
+                </View>
+              </View>
+            </View>
+
+            <View className='mb-5 flex-row w-full items-center justify-around gap-4'>
+              {/* League */}
+              <View className='w-[45%] flex-row items-center gap-2 rounded-xl border border-primary px-4 py-3'>
+                <View className="absolute -top-2 right-2 bg-primary px-2 py-1 rounded-md">
+                  <Text className="text-xs font-bold text-white">WEEK 1</Text>
+                </View>
+                <MaterialCommunityIcons name="trophy-outline" size={24} color={colors.primary} />
+                <View className='gap-1'>
+                  <Text>Ruby</Text>
+                  <Text>Current League</Text>
+                </View>
+              </View>
+
+              {/* English Score */}
+              <View className='w-[45%] flex-row items-center gap-2 rounded-xl border border-primary px-4 py-3'>
+                <MaterialIcons name='score' size={24} color={colors.primary} />
+                <View className='gap-1'>
+                  <Text>63</Text>
+                  <Text>English Score</Text>
+                </View>
+              </View>
+            </View>
           </View>
         </View>
 
