@@ -8,9 +8,9 @@ const shop = () => {
     <ScrollView className='flex-1 bg-background'>
       <View className='bg-background items-center '>
 
-        {/* CTA subscription */}
+        {/* CTA subscription or 1 week Free trial*/}
         <View className='w-[90%] jsutify-center items-center bg-background p-4 rounded-lg shadow-md mt-4'>
-          <Text className='text-textPrimary text-2xl font-bold'>Pro</Text>
+          <Text className='text-textPrimary text-2xl font-bold'>Try Pro</Text>
           <Text className='text-textSecondary text-base'>Unlock all features with a subscription</Text>
           <TouchableOpacity className='bg-primary rounded-lg p-4 mt-4 w-full'>
             <Text className='text-white text-center text-lg font-bold'>Try 1 week for Free</Text>
@@ -128,6 +128,27 @@ const shop = () => {
               </View>
             </View>
           </View>
+        </View>
+
+        {/* Promo Code */}
+        <View className='flex-1 my-4 bg-background justify-center'>
+          <View className='mb-2 w-[90%]'>
+            <Text className='text-xl font-bold'>Promo Code</Text>
+          </View>
+
+          <View className='flex-row items-center justify-between p-6 rounded-lg shadow-md mb-2 w-[90%] gap-4'>
+            <MaterialIcons name="airplane-ticket" size={60} color={colors.primary} />
+            <View className='w-[75%]'>
+              <Text className='font-bold text-lg'>Redeem a promo code</Text>
+              <Text className='text-wrap'>Enter a promo code to earn rewards</Text>
+              <View className='flex-row items-center mt-2 gap-2'>
+              <TouchableOpacity className='bg-primary rounded-md px-4 py-2 mt-2 '>
+                <Text className='text-center text-white font-bold'>Redeem</Text>
+              </TouchableOpacity>
+              </View>
+            </View>
+          </View>
+
         </View>
 
       </View>
