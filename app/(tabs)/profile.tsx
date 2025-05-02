@@ -51,7 +51,7 @@ const profile = () => {
           <View className='mb-2'>
             <Text className='text-xl font-bold'>Overview</Text>
           </View>
-          <View className='mb-2'>
+          <View >
             <View className='mb-5 flex-row w-full items-center justify-around gap-4'>
               {/* Day Streak */}
               <View className='w-[45%] flex-row items-center gap-2 rounded-xl border border-primary px-4 py-3'>
@@ -72,7 +72,7 @@ const profile = () => {
               </View>
             </View>
 
-            <View className='mb-5 flex-row w-full items-center justify-around gap-4'>
+            <View className='mb-2 flex-row w-full items-center justify-around gap-4'>
               {/* League */}
               <View className='w-[45%] flex-row items-center gap-2 rounded-xl border border-primary px-4 py-3'>
                 <View className="absolute -top-2 right-2 bg-primary px-2 py-1 rounded-md">
@@ -97,6 +97,38 @@ const profile = () => {
           </View>
         </View>
 
+        {/* Achievements */}
+        <View className='w-[90%] flex-1 my-4 bg-background justify-center'>
+          <View className='mb-2 flex-row items-center justify-between'>
+            <Text className='text-xl font-bold'>Achievements</Text>
+            <Text className='text-lg font-bold'>View All</Text>
+          </View>
+
+          {/* Achievements Row */}
+          <View className="flex-row justify-between">
+            {/* Achievement Item */}
+            <View className="items-center flex-1">
+              <Profile width={100} height={100} />
+              <View className="absolute -bottom-safe-offset-0.5 z-10 bg-primary px-2 py-1 rounded-md">
+                <Text className="text-xs font-bold text-white">34</Text>
+              </View>
+            </View>
+
+            <View className="items-center flex-1">
+              <Profile width={100} height={100} />
+              <View className="absolute -bottom-safe-offset-0.5 z-10 bg-primary px-2 py-1 rounded-md">
+                <Text className="text-xs font-bold text-white">50</Text>
+              </View>
+            </View>
+
+            <View className="items-center flex-1 justify-center">
+              <View className="absolute -bottom-safe-offset-0.5 z-10 bg-primary px-2 py-1 rounded-md">
+                <Text className="text-xs font-bold text-white">75</Text>
+              </View>
+              <Profile width={100} height={100} />
+            </View>
+          </View>
+        </View>
       </View>
     </ScrollView>
   )
