@@ -18,7 +18,7 @@ export default {
                 backgroundColor: "#ffffff"
             },
             package: "com.abdulrahimsulthan.ostrichtalks",
-            googleServicesFile: process.env.GOOGLE_SERVICES_JSON ?? '/home/abdul/dev/products/ostrich-talks/credentials.json',
+            googleServicesFile: process.env.GOOGLE_SERVICES_JSON ?? './google-services.json',
         },
         web: {
             bundler: "metro",
