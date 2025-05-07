@@ -3,6 +3,7 @@ import React from 'react'
 import Profile from "@/assets/avatars/profile.svg"
 import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons'
 import colors from '@/constants/colors'
+import { Image } from 'expo-image'
 
 const profile = () => {
   return (
@@ -108,14 +109,20 @@ const profile = () => {
           <View className="flex-row justify-between">
             {/* Achievement Item */}
             <View className="items-center flex-1">
-              <Profile width={100} height={100} />
+              <Image
+                style={{ width: 100, height: 100 }}
+                source={require('@/assets/avatars/penguin.png')}
+              />
               <View className="absolute -bottom-safe-offset-0.5 z-10 bg-primary px-2 py-1 rounded-md">
                 <Text className="text-xs font-bold text-white">34</Text>
               </View>
             </View>
 
             <View className="items-center flex-1">
-              <Profile width={100} height={100} />
+              <Image
+                style={{ width: 100, height: 100 }}
+                source={require('@/assets/avatars/penguin.png')}
+              />
               <View className="absolute -bottom-safe-offset-0.5 z-10 bg-primary px-2 py-1 rounded-md">
                 <Text className="text-xs font-bold text-white">50</Text>
               </View>
@@ -125,7 +132,10 @@ const profile = () => {
               <View className="absolute -bottom-safe-offset-0.5 z-10 bg-primary px-2 py-1 rounded-md">
                 <Text className="text-xs font-bold text-white">75</Text>
               </View>
-              <Profile width={100} height={100} />
+              <Image
+                style={{ width: 100, height: 100 }}
+                source={require('@/assets/avatars/penguin.png')}
+              />
             </View>
           </View>
         </View>
