@@ -212,7 +212,6 @@ const league = () => {
         <View className='my-2 w-full'>
           <Text className='font-bold text-xl'>{trophies[data.level].name} League</Text>
           <FlatList
-            initialScrollIndex={5}
             data={trophies}
             horizontal={true}
             showsHorizontalScrollIndicator={false}
@@ -231,6 +230,7 @@ const league = () => {
 
           {/* Promotion zone */}
           <FlatList
+            scrollEnabled={false}
             data={data.leaderboard.slice(0, 5)}
             renderItem={({ item }) => (
               <View className='flex flex-row items-center justify-between my-2 p-2 bg-white rounded-lg'>
@@ -250,6 +250,7 @@ const league = () => {
 
           {/* Same Zone */}
           <FlatList
+            scrollEnabled={false}
             data={data.leaderboard.slice(5, 15)}
             renderItem={({ item }) => (
               <View className='flex flex-row items-center justify-between my-2 p-2 bg-white rounded-lg'>
@@ -269,6 +270,7 @@ const league = () => {
           {/* Demotion zone */}
           <Text>DEMOTION ZONE</Text>
           <FlatList
+            scrollEnabled={false}
             data={data.leaderboard.slice(15, 20)}
             renderItem={({ item }) => (
               <View className='flex flex-row items-center justify-between my-2 p-2 bg-white rounded-lg'>
