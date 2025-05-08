@@ -80,20 +80,20 @@ const quest = () => {
           <View className='flex-row justify-around items-center my-2'>
             {/* Your status */}
             <View className='flex justify-center items-center gap-1'>
-              <Image source={require("@/assets/avatars/penguin.png")} style={{ width: 100, height: 100, borderRadius: 25 }} />
+              <Image source={require("@/assets/avatars/penguin.png")} style={{ width: 60, height: 60, borderRadius: 25 }} />
               <Text>You </Text>
               <Text>1 lesson</Text>
-              <TouchableOpacity className='bg-primary px-4 py-2 rounded-md'>
+              <TouchableOpacity className='bg-primary px-4 py-2 my-2 rounded-md'>
                 <Text className='text-white text-center'>Nudge</Text>
               </TouchableOpacity>
             </View>
 
             {/* Friend status */}
             <View className='flex justify-center items-center gap-1'>
-              <Image source={require("@/assets/avatars/penguin.png")} style={{ width: 100, height: 100, borderRadius: 25 }} />
+              <Image source={require("@/assets/avatars/penguin.png")} style={{ width: 60, height: 60, borderRadius: 25 }} />
               <Text>John Doe</Text>
               <Text>0 lessons</Text>
-              <TouchableOpacity className='bg-primary px-4 py-2 rounded-md'>
+              <TouchableOpacity className='bg-primary px-4 py-2 my-2 rounded-md'>
                 <Text className='text-white text-center'>Gift</Text>
               </TouchableOpacity>
             </View>
