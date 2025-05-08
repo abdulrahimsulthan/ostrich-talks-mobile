@@ -6,7 +6,7 @@ import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 export default function TabLayout() {
     return (
         <Tabs screenOptions={{
-            headerShown: false, 
+            popToTopOnBlur: true,
             tabBarActiveTintColor: colors.primaryDark, 
             tabBarInactiveTintColor: colors.textSecondary, 
             tabBarLabelStyle: { fontSize: 12 }, 
@@ -20,6 +20,7 @@ export default function TabLayout() {
             <Tabs.Screen
                 name="home"
                 options={{
+                    headerShown: false, 
                     title: 'Home',
                     tabBarIcon: ({ color }) => <MaterialIcons size={28} name="home" color={color} />,
                 }}
