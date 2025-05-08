@@ -4,7 +4,7 @@ import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons'
 import colors from '@/constants/colors'
 import { Image } from 'expo-image'
 
-const reward = () => {
+const quest = () => {
   const data = {
     dailyQuest: [
       {
@@ -142,4 +142,4 @@ const reward = () => {
   )
 }
 
-export default reward
+export default quest

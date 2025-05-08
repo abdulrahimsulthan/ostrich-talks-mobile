@@ -1,7 +1,6 @@
 import { Tabs } from 'expo-router';
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import colors from '@/constants/colors';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 
 
 export default function TabLayout() {
@@ -45,10 +44,10 @@ export default function TabLayout() {
                     tabBarIcon: ({ color }) => <MaterialIcons size={28} name="leaderboard" color={color} />
                 }} />
             <Tabs.Screen
-                name="reward"
+                name="quest"
                 options={{
-                    title: 'Reward',
-                    tabBarIcon: ({ color }) => <MaterialIcons size={28} name="star" color={color} />
+                    title: 'Quest',
+                    tabBarIcon: ({ color }) => <MaterialCommunityIcons name="treasure-chest" size={28} color={color} />
                 }} />
             
         </Tabs>
