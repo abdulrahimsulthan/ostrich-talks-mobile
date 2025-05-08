@@ -1,10 +1,29 @@
-import { View, Text, ScrollView, TouchableOpacity } from 'react-native'
+import { View, Text, ScrollView, TouchableOpacity, FlatList } from 'react-native'
 import React from 'react'
 import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons'
 import colors from '@/constants/colors'
 import { Image } from 'expo-image'
 
 const reward = () => {
+  const data = {
+    dailyQuest: [
+      {
+        title: "Start a streak",
+        progress: { completed: 1, total: 1 },
+        chestColor: colors.primary
+      },
+      {
+        title: "Complete 5 lessons",
+        progress: { completed: 2, total: 5 },
+        chestColor: colors.primary
+      },
+      {
+        title: "Score 90% or higher in 4 lessons",
+        progress: { completed: 1, total: 4 },
+        chestColor: colors.primary
+      }
+    ]
+  }
   return (
     <ScrollView className='bg-background'>
       <View className='w-[90%] mx-auto mt-2'>
@@ -48,7 +67,7 @@ const reward = () => {
           <View className='w-[90%] mx-auto my-2'>
             <Text className='text-xl mb-2'>Complete 5 lessons</Text>
             <View className='flex-1 justify-center items-center'>
-            {/* progress bar */}
+              {/* progress bar */}
               <View className='flex-1 h-6 bg-gray-300 rounded-full w-[80%] justify-center items-center'>
                 <Text className='text-textPrimary z-10'>3 / 5</Text>
                 <View className='absolute left-0 h-6 bg-primary rounded-l-full ' style={{ width: '60%' }} >
@@ -61,7 +80,7 @@ const reward = () => {
           <View className='flex-row justify-around items-center my-2'>
             {/* Your status */}
             <View className='flex justify-center items-center gap-1'>
-              <Image source={require("@/assets/avatars/penguin.png")} style={{width:100, height:100, borderRadius: 25 }}/>
+              <Image source={require("@/assets/avatars/penguin.png")} style={{ width: 100, height: 100, borderRadius: 25 }} />
               <Text>You </Text>
               <Text>1 lesson</Text>
               <TouchableOpacity className='bg-primary px-4 py-2 rounded-md'>
@@ -71,7 +90,7 @@ const reward = () => {
 
             {/* Friend status */}
             <View className='flex justify-center items-center gap-1'>
-              <Image source={require("@/assets/avatars/penguin.png")} style={{width:100, height:100, borderRadius: 25 }}/>
+              <Image source={require("@/assets/avatars/penguin.png")} style={{ width: 100, height: 100, borderRadius: 25 }} />
               <Text>John Doe</Text>
               <Text>0 lessons</Text>
               <TouchableOpacity className='bg-primary px-4 py-2 rounded-md'>
@@ -79,25 +98,43 @@ const reward = () => {
               </TouchableOpacity>
             </View>
           </View>
-          
+
         </View>
 
         {/* Daily Quests */}
         <View className='my-2 w-full'>
-          <Text className='font-bold text-xl'>Daily Quests</Text>
-          <Text className='text-sm text-gray-500'>50 MINUTES</Text>
-          <View>
-            <Text>Start a Streak</Text>
-            <Text>1 / 1</Text>
+          {/* Header */}
+          <View className='flex-row justify-between items-center'>
+            <Text className='font-bold text-xl'>Daily Quests</Text>
+            <View className='flex-row items-center'>
+              <MaterialIcons className='mr-2' name="timelapse" size={20} color={colors.primary} />
+              <Text className='text-sm text-gray-500'>13 HOURS</Text>
+            </View>
           </View>
-          <View>
-            <Text>Complete 2 lessons</Text>
-            <Text>1 / 2</Text>
-          </View>
-          <View>
-            <Text>Score 90% or higher in 4 lessons</Text>
-            <Text>1 / 4</Text>
-          </View>
+
+          {/* Daily quest list */}
+          <FlatList data={data.dailyQuest}
+            scrollEnabled={false}
+            renderItem={({
+              item: {
+                title,
+                progress: { total, completed },
+                chestColor
+              }
+            }) => <View className='my-2'>
+                <Text className='text-xl mb-2'>{title}</Text>
+                <View className='flex-row justify-center items-center gap-5 px-4'>
+                  {/* progress bar */}
+                  <View className='flex-1 h-6 bg-gray-300 rounded-full justify-center items-center'>
+                    <Text className='text-textPrimary z-10'>{completed} / {total}</Text>
+                    <View className='absolute left-0 h-6 bg-primary rounded-full ' style={{ width: `${(completed / total) * 100}%` }} >
+                    </View>
+                  </View>
+
+                  <MaterialCommunityIcons name="treasure-chest" size={50} color={chestColor} />
+                </View>
+              </View>
+            } />
         </View>
 
       </View>
