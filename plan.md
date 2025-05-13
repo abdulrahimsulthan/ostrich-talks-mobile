@@ -64,16 +64,18 @@
 - [ ] Level 10 Emerald
   
 ## Quest ( Egg )
-- [ ] Special Egg Closed
-- [ ] Special Egg Opened
+- [ ] Special 1 Egg Closed
+- [ ] Special 1 Egg Opened
+- [ ] Special 2 Egg Closed
+- [ ] Special 2 Egg Opened
 - [ ] Level 1 Egg Closed
 - [ ] Level 1 Egg Opened
 - [ ] Level 2 Egg Closed
 - [ ] Level 2 Egg Opened
 - [ ] Level 3 Egg Closed
 - [ ] Level 3 Egg Opened
-- [ ] Free egg closed
-- [ ] Free egg opened
+- [ ] Free Egg Closed
+- [ ] Free Egg Opened
 
 ## Streak
 ### Streak
@@ -109,6 +111,10 @@
 - [ ] stronger will power ( slowly reduced over time)
 
 ## Feather (Virtual currency)
+- [ ] Buy streak freez
+- [ ] Buy Will power
+- [ ] Buy Magic Will power 
+- [ ] Buy XP boost
 
 ## Alter Ego Level
 ### Character Building
