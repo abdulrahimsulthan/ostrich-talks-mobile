@@ -31,9 +31,9 @@ export default function HomeLayout() {
                 presentation: "fullScreenModal",
                 title: "Plan",
             }} />
-            <Stack.Screen name="score" options={{
+            <Stack.Screen name="alterEgo" options={{
                 presentation: "fullScreenModal",
-                title: "Score",
+                title: "Alter Egos",
             }} />
         </Stack>
     )
