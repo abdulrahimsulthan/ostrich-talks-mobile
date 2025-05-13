@@ -2,7 +2,7 @@ import { View, Text, ScrollView, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { MaterialIcons } from '@expo/vector-icons'
 
-const practice = () => {
+const world = () => {
   return (
     <ScrollView className='bg-background'>
       <View className='w-[90%] mx-auto'>
@@ -37,4 +37,4 @@ const practice = () => {
   )
 }
 
-export default practice
+export default world

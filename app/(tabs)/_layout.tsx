@@ -1,6 +1,6 @@
 import { Tabs } from 'expo-router';
 import colors from '@/constants/colors';
-import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
+import { Fontisto, MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 
 
 export default function TabLayout() {
@@ -26,10 +26,10 @@ export default function TabLayout() {
                 }}
             />
             <Tabs.Screen
-                name="practice"
+                name="world"
                 options={{
-                    title: 'Practice',
-                    tabBarIcon: ({ color }) => <MaterialCommunityIcons name="dumbbell" size={24} color={color}/>
+                    title: 'World',
+                    tabBarIcon: ({ color }) => <Fontisto name="world" size={24} color={color}/>
                 }} 
             />
             <Tabs.Screen
