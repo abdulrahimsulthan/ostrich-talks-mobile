@@ -3,22 +3,28 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { TouchableOpacity, View, Text, ScrollView } from "react-native";
 import { useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
+import userStore from "@/store/userStore";
+import progressStore from "@/store/progressStore";
+import overviewStore from "@/store/overviewStore";
 
-const buttons: {
+interface menuButtons {
   icon: "monetization-on" | "whatshot" | "favorite" | "sell" | "score";
-  label: string;
+  label: number | string;
   active: boolean;
   path: "/home/shop" | "/home/streak" | "/home/heart" | "/home/plan" | "/home/alterEgo";
-}[] = [
-    { icon: 'score', label: '26', active: false, path: "/home/alterEgo" },
-    { icon: 'monetization-on', label: '1', active: false, path: "/home/shop" },
-    { icon: 'whatshot', label: '2', active: false, path: "/home/streak" },
-    { icon: 'favorite', label: '3', active: false, path: "/home/heart" },
-    { icon: 'sell', label: 'PRO', active: true, path: "/home/plan" },
-  ];
-
+}
 
 export default function Index() {
+  const { name } = userStore()
+  const { level } = progressStore()
+  const { feathers, streak, willPower } = overviewStore()
+  const buttons: menuButtons[] = [
+      { icon: 'score', label: level, active: false, path: "/home/alterEgo" },
+      { icon: 'monetization-on', label: feathers, active: false, path: "/home/shop" },
+      { icon: 'whatshot', label: streak, active: false, path: "/home/streak" },
+      { icon: 'favorite', label: willPower, active: false, path: "/home/heart" },
+      { icon: 'sell', label: 'PRO', active: true, path: "/home/plan" },
+    ];
 
   const router = useRouter()
   return (
@@ -53,15 +59,15 @@ export default function Index() {
 
           {/* TODO: Lession Content */}
           <View className="flex-1 items-center justify-center w-full px-4">
-            <Text className="text-textPrimary">Welcome to Ostrich Talks!</Text>
+            <Text className="text-textPrimary">Welcome {name} to Ostrich Talks!</Text>
             <Text className="text-textSecondary">This is where you can find your lessons.</Text>
             <Text className="text-textSecondary">Click on the buttons below to mock levels.</Text>
 
             <View className="w-full flex-row justify-around items-center mt-4" >
-              <TouchableOpacity>
+              <TouchableOpacity >
                 <Text className="text-white bg-primary border border-border rounded-md px-4 py-2 ">Start Lession</Text>
               </TouchableOpacity>
-              <TouchableOpacity>
+              <TouchableOpacity >
                 <Text className="text-white bg-primary rounded-md px-4 py-2 ">End Lession</Text>
               </TouchableOpacity>
             </View>
