@@ -1,17 +1,30 @@
 import { create } from "zustand";
 import { createJSONStorage, devtools, persist } from "zustand/middleware";
 import storage from "./storage";
+import fetchUser from "@/services/fetchUser";
 
-interface userState {
+export interface userState {
+  id: string;
   name: string;
-  setName: (name: string) => void;
+  joined: number;
+  followers: number;
+  following: number;
+  loading: boolean;
+  setId: (id: string) => void
+  fetchUser: () => Promise<void>;
 }
 
 const userStore = create<userState>()(
     persist(
       (set) => ({
+        id: "",
         name: "",
-        setName: (name: string) => set({ name }),
+        joined: Date.now(),
+        followers: 0,
+        following: 0,
+        loading: false,
+        setId: (id) => set({id}),
+        fetchUser: fetchUser(set),
       }),
       {
         name: "user-store",
