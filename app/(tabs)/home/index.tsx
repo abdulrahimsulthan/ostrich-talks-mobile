@@ -11,22 +11,32 @@ interface menuButtons {
   icon: "monetization-on" | "whatshot" | "favorite" | "sell" | "score";
   label: number | string;
   active: boolean;
-  path: "/home/shop" | "/home/streak" | "/home/heart" | "/home/plan" | "/home/alterEgo";
+  path:
+    | "/home/shop"
+    | "/home/streak"
+    | "/home/heart"
+    | "/home/plan"
+    | "/home/alterEgo";
 }
 
 export default function Index() {
-  const { name } = userStore()
-  const { level } = progressStore()
-  const { feathers, streak, willPower } = overviewStore()
+  const { name } = userStore();
+  const { level } = progressStore();
+  const { feathers, streak, willPower } = overviewStore();
   const buttons: menuButtons[] = [
-      { icon: 'score', label: level, active: false, path: "/home/alterEgo" },
-      { icon: 'monetization-on', label: feathers, active: false, path: "/home/shop" },
-      { icon: 'whatshot', label: streak, active: false, path: "/home/streak" },
-      { icon: 'favorite', label: willPower, active: false, path: "/home/heart" },
-      { icon: 'sell', label: 'PRO', active: true, path: "/home/plan" },
-    ];
+    { icon: "score", label: level, active: false, path: "/home/alterEgo" },
+    {
+      icon: "monetization-on",
+      label: feathers,
+      active: false,
+      path: "/home/shop",
+    },
+    { icon: "whatshot", label: streak, active: false, path: "/home/streak" },
+    { icon: "favorite", label: willPower, active: false, path: "/home/heart" },
+    { icon: "sell", label: "PRO", active: true, path: "/home/plan" },
+  ];
 
-  const router = useRouter()
+  const router = useRouter();
   return (
     <SafeAreaView className="bg-background">
       {/* Navbar */}
@@ -34,13 +44,23 @@ export default function Index() {
         {buttons.map((button, index) => (
           <TouchableOpacity
             key={index}
-            onPress={() => { router.push(button.path) }}
+            onPress={() => {
+              router.push(button.path);
+            }}
             className="flex-row items-center justify-center p-2 rounded-md"
           >
-            <MaterialIcons name={button.icon} size={24} color={colors.primary} />
+            <MaterialIcons
+              name={button.icon}
+              size={24}
+              color={colors.primary}
+            />
             <Text className="text-textSecondary ml-2">{button.label}</Text>
             {button.active && (
-              <View className="absolute w-2 h-2 bg-primaryDark rounded-full top-0 right-0" />
+              <View
+                className={`
+                absolute w-2 h-2 bg-primaryDark rounded-full top-0 right-0
+                `}
+              />
             )}
           </TouchableOpacity>
         ))}
@@ -49,34 +69,53 @@ export default function Index() {
       <ScrollView showsVerticalScrollIndicator={false}>
         <View className="flex-1 items-center  bg-background h-screen-safe">
           {/* TODO: Motivative banner */}
-          <View className="w-[90%] h-20 bg-primary rounded-md flex-row items-center justify-between px-4">
+          <View
+            className={`
+              w-[90%] h-20 bg-primary rounded-md flex-row 
+              items-center justify-between px-4
+            `}
+          >
             <View>
               <Text className="text-white text-lg">Fiery Streak!</Text>
-              <Text className="text-white">1 more lesson to get a hotter streak!</Text>
+              <Text className="text-white">
+                1 more lesson to get a hotter streak!
+              </Text>
             </View>
             <MaterialIcons name="whatshot" size={24} color="white" />
           </View>
 
           {/* TODO: Lession Content */}
           <View className="flex-1 items-center justify-center w-full px-4">
-            <Text className="text-textPrimary">Welcome {name} to Ostrich Talks!</Text>
-            <Text className="text-textSecondary">This is where you can find your lessons.</Text>
-            <Text className="text-textSecondary">Click on the buttons below to mock levels.</Text>
+            <Text className="text-textPrimary">
+              Welcome {name} to Ostrich Talks!
+            </Text>
+            <Text className="text-textSecondary">
+              This is where you can find your lessons.
+            </Text>
+            <Text className="text-textSecondary">
+              Click on the buttons below to mock levels.
+            </Text>
 
-            <View className="w-full flex-row justify-around items-center mt-4" >
-              <TouchableOpacity >
-                <Text className="text-white bg-primary border border-border rounded-md px-4 py-2 ">Start Lession</Text>
+            <View className="w-full flex-row justify-around items-center mt-4">
+              <TouchableOpacity>
+                <Text
+                  className={`
+                text-white bg-primary border 
+                border-border rounded-md px-4 py-2 
+                `}
+                >
+                  Start Lession
+                </Text>
               </TouchableOpacity>
-              <TouchableOpacity >
-                <Text className="text-white bg-primary rounded-md px-4 py-2 ">End Lession</Text>
+              <TouchableOpacity>
+                <Text className="text-white bg-primary rounded-md px-4 py-2">
+                  End Lession
+                </Text>
               </TouchableOpacity>
             </View>
           </View>
         </View>
       </ScrollView>
-
     </SafeAreaView>
-
   );
 }
-
