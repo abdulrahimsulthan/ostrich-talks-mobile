@@ -1,13 +1,15 @@
 import colors from "@/constants/colors";
+import overviewStore from "@/store/overviewStore";
 import { MaterialIcons } from "@expo/vector-icons";
 import { Stack } from "expo-router";
 import { Text, View } from "react-native";
 
 export default function HomeLayout() {
+    const {feathers} = overviewStore()
     const shopRight = () =>
         <View className="flex-row items-center justify-center gap-2">
             <MaterialIcons name="monetization-on" size={24} color={colors.primary} />
-            <Text className="text-textSecondary font-bold text-lg">1000</Text>
+            <Text className="text-textSecondary font-bold text-lg">{feathers}</Text>
         </View>
 
 
