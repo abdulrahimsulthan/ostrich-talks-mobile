@@ -18,11 +18,11 @@ const progressStore = create<progressState>()(
     (set) => ({
       level: 1,
       title: "Seeker",
-      completed: 97,
-      home: 20,
-      social: 40,
-      office: 10,
-      leadership: 30,
+      completed: 0,
+      home: 0,
+      social: 0,
+      office: 0,
+      leadership: 0,
       setProgress: (data) => set(data),
     }),
     {
