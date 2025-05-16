@@ -1,22 +1,18 @@
 import colors from "@/constants/colors";
-import { MaterialIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
 import { TouchableOpacity, View, Text, ScrollView } from "react-native";
-import { useRouter } from "expo-router";
+import { Href, useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import userStore from "@/store/userStore";
 import progressStore from "@/store/progressStore";
 import overviewStore from "@/store/overviewStore";
 
 interface menuButtons {
-  icon: "monetization-on" | "whatshot" | "favorite" | "sell" | "score";
+  Icon: any;
+  icon: string;
   label: number | string;
-  active: boolean;
-  path:
-    | "/home/shop"
-    | "/home/streak"
-    | "/home/willpower"
-    | "/home/plan"
-    | "/home/alterEgo";
+  path: Href;
+  notify?: boolean;
 }
 
 export default function Index() {
@@ -24,16 +20,36 @@ export default function Index() {
   const { level } = progressStore();
   const { feathers, streak, willPower } = overviewStore();
   const buttons: menuButtons[] = [
-    { icon: "score", label: level, active: false, path: "/home/alterEgo" },
     {
+      Icon: MaterialIcons,
+      icon: "score",
+      label: level,
+      path: "/home/alterEgo",
+    },
+    {
+      Icon: MaterialIcons,
       icon: "monetization-on",
       label: feathers,
-      active: false,
       path: "/home/shop",
     },
-    { icon: "whatshot", label: streak, active: false, path: "/home/streak" },
-    { icon: "favorite", label: willPower, active: false, path: "/home/willpower" },
-    { icon: "sell", label: "PRO", active: true, path: "/home/plan" },
+    {
+      Icon: MaterialIcons,
+      icon: "whatshot",
+      label: streak,
+      path: "/home/streak",
+    },
+    {
+      Icon: MaterialCommunityIcons,
+      icon: "brain",
+      label: willPower,
+      path: "/home/willpower",
+    },
+    {
+      Icon: MaterialIcons,
+      icon: "sell",
+      label: "PRO",
+      path: "/home/plan",
+    },
   ];
 
   const router = useRouter();
@@ -49,13 +65,9 @@ export default function Index() {
             }}
             className="flex-row items-center justify-center p-2 rounded-md"
           >
-            <MaterialIcons
-              name={button.icon}
-              size={24}
-              color={colors.primary}
-            />
+            <button.Icon name={button.icon} size={24} color={colors.primary} />
             <Text className="text-textSecondary ml-2">{button.label}</Text>
-            {button.active && (
+            {button.notify && (
               <View
                 className={`
                 absolute w-2 h-2 bg-primaryDark rounded-full top-0 right-0
