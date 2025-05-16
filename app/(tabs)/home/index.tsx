@@ -14,7 +14,7 @@ interface menuButtons {
   path:
     | "/home/shop"
     | "/home/streak"
-    | "/home/heart"
+    | "/home/willpower"
     | "/home/plan"
     | "/home/alterEgo";
 }
@@ -32,7 +32,7 @@ export default function Index() {
       path: "/home/shop",
     },
     { icon: "whatshot", label: streak, active: false, path: "/home/streak" },
-    { icon: "favorite", label: willPower, active: false, path: "/home/heart" },
+    { icon: "favorite", label: willPower, active: false, path: "/home/willpower" },
     { icon: "sell", label: "PRO", active: true, path: "/home/plan" },
   ];
 

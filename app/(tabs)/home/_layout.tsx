@@ -25,9 +25,9 @@ export default function HomeLayout() {
                 title: "Shop",
                 headerRight: shopRight,
             }} />
-            <Stack.Screen name="heart" options={{
+            <Stack.Screen name="willpower" options={{
                 presentation: "fullScreenModal",
-                title: "Hearts",
+                title: "Will Power",
             }} />
             <Stack.Screen name="plan" options={{
                 presentation: "fullScreenModal",
