@@ -8,10 +8,11 @@ export interface overviewState {
   xp: number;
   mistakes: number;
   streak: number;
+  streakLevel:number;
   streakFreeze: number;
   streakGoal: number;
   friendStreak: number;
-  setOverview: (data: overviewState) => void;
+  setOverview: (data: Partial<overviewState>) => void;
 }
 
 const overviewStore = create<overviewState>()(
@@ -22,6 +23,7 @@ const overviewStore = create<overviewState>()(
       xp: 0,
       mistakes: 0,
       streak: 0,
+      streakLevel: 0,
       streakFreeze: 0,
       streakGoal: 0,
       friendStreak: 0,

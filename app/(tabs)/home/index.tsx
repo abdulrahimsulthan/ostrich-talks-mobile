@@ -1,81 +1,23 @@
-import colors from "@/constants/colors";
-import { MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
 import { TouchableOpacity, View, Text, ScrollView } from "react-native";
-import { Href, useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import userStore from "@/store/userStore";
-import progressStore from "@/store/progressStore";
 import overviewStore from "@/store/overviewStore";
-
-interface menuButtons {
-  Icon: any;
-  icon: string;
-  label: number | string;
-  path: Href;
-  notify?: boolean;
-}
+import { completedMessage, streakLevels } from "@/constants/streak";
+import HomeMenus from "@/components/Home/HomeMenus";
 
 export default function Index() {
   const { name } = userStore();
-  const { level } = progressStore();
-  const { feathers, streak, willPower } = overviewStore();
-  const buttons: menuButtons[] = [
-    {
-      Icon: MaterialIcons,
-      icon: "score",
-      label: level,
-      path: "/home/alterEgo",
-    },
-    {
-      Icon: MaterialIcons,
-      icon: "monetization-on",
-      label: feathers,
-      path: "/home/shop",
-    },
-    {
-      Icon: MaterialIcons,
-      icon: "whatshot",
-      label: streak,
-      path: "/home/streak",
-    },
-    {
-      Icon: MaterialCommunityIcons,
-      icon: "brain",
-      label: willPower,
-      path: "/home/willpower",
-    },
-    {
-      Icon: MaterialIcons,
-      icon: "sell",
-      label: "PRO",
-      path: "/home/plan",
-    },
-  ];
+  const streakLevel = overviewStore((state) => state.streakLevel);
+  const { title, message } =
+    streakLevel < streakLevels.length
+      ? streakLevels[streakLevel]
+      : completedMessage;
 
-  const router = useRouter();
   return (
     <SafeAreaView className="bg-background">
-      {/* Navbar */}
       <View className="flex-row w-full py-4 justify-around">
-        {buttons.map((button, index) => (
-          <TouchableOpacity
-            key={index}
-            onPress={() => {
-              router.push(button.path);
-            }}
-            className="flex-row items-center justify-center p-2 rounded-md"
-          >
-            <button.Icon name={button.icon} size={24} color={colors.primary} />
-            <Text className="text-textSecondary ml-2">{button.label}</Text>
-            {button.notify && (
-              <View
-                className={`
-                absolute w-2 h-2 bg-primaryDark rounded-full top-0 right-0
-                `}
-              />
-            )}
-          </TouchableOpacity>
-        ))}
+        <HomeMenus />
       </View>
 
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -83,17 +25,27 @@ export default function Index() {
           {/* TODO: Motivative banner */}
           <View
             className={`
-              w-[90%] h-20 bg-primary rounded-md flex-row 
-              items-center justify-between px-4
+              w-[90%] h-24 bg-primary rounded-md flex-row 
+              items-center justify-between py-2
             `}
           >
-            <View>
-              <Text className="text-white text-lg">Fiery Streak!</Text>
-              <Text className="text-white">
-                1 more lesson to get a hotter streak!
+            {/* Message */}
+            <View className={`pl-4 w-[80%] gap-1`}>
+              <Text
+                className={`
+                text-white text-lg font-semibold
+              `}
+              >
+                {title}
               </Text>
+              <Text className="text-white">{message}</Text>
             </View>
-            <MaterialIcons name="whatshot" size={24} color="white" />
+            <MaterialIcons
+              className={`w-[20%] text-center`}
+              name="whatshot"
+              size={40}
+              color="white"
+            />
           </View>
 
           {/* TODO: Lession Content */}

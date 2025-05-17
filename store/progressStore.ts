@@ -9,6 +9,7 @@ export interface progressState {
   home: number;
   social: number;
   office: number;
+  levelsOnDay: number;
   leadership: number;
   setProgress: (data: progressState) => void
 }
@@ -23,6 +24,7 @@ const progressStore = create<progressState>()(
       social: 0,
       office: 0,
       leadership: 0,
+      levelsOnDay: 0,
       setProgress: (data) => set(data),
     }),
     {
