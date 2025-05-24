@@ -1,22 +1,34 @@
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native'
 import React from 'react'
+import dayjs from 'dayjs'
 import Profile from "@/assets/avatars/profile.svg"
 import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons'
 import colors from '@/constants/colors'
 import { Image } from 'expo-image'
+import userStore from '@/store/userStore'
+import overviewStore from '@/store/overviewStore'
+import progressStore from '@/store/progressStore'
 
 const profile = () => {
+  const { name, joined, followers, following } = userStore()
+  const { streak, xp, league, leagueWeek } = overviewStore()
+  const { level, title } = progressStore()
   return (
     <ScrollView className='flex-1 bg-background'>
       <View className='flex-1 w-full items-center justify-center bg-background'>
 
         {/* Header */}
-        <View className='flex-1 items-center justify-center mt-4 mb-2 p-4 bg-background'>
-          <View className='h-40  w-40 rounded-full shadow-md items-center shadow-primary justify-center'>
+        <View className={`
+          flex-1 items-center justify-center mt-4 mb-2 p-4 bg-background
+        `}>
+          <View className={`
+            h-40  w-40 rounded-full shadow-md items-center 
+            shadow-primary justify-center
+          `}>
             <Profile width={100} height={100} />
           </View>
-          <Text className="my-2">John Doe</Text>
-          <Text>Joined on 28 Apr 2025</Text>
+          <Text className="my-2">{name}</Text>
+          <Text>Joined on {dayjs(joined).format("DD MMM YYYY")}</Text>
         </View>
 
         {/* Social */}
@@ -24,11 +36,11 @@ const profile = () => {
           {/* followers */}
           <View className='flex-row items-center justify-around w-full'>
             <View className='flex-row items-center justify-center gap-4'>
-              <Text className='font-bold'>100</Text>
+              <Text className='font-bold'>{followers}</Text>
               <Text>Followers</Text>
             </View>
             <View className='flex-row items-center justify-center gap-4'>
-              <Text className='font-bold'>50</Text>
+              <Text className='font-bold'>{following}</Text>
               <Text>Following</Text>
             </View>
           </View>
@@ -58,7 +70,7 @@ const profile = () => {
               <View className='w-[45%] flex-row items-center gap-2 rounded-xl border border-primary px-4 py-3'>
                 <MaterialIcons name='whatshot' size={24} color={colors.primary} />
                 <View className='gap-1'>
-                  <Text>10</Text>
+                  <Text>{streak}</Text>
                   <Text>Day Streak</Text>
                 </View>
               </View>
@@ -67,7 +79,7 @@ const profile = () => {
               <View className='w-[45%] flex-row items-center gap-2 rounded-xl border border-primary px-4 py-3'>
                 <MaterialCommunityIcons name="lightning-bolt" size={24} color={colors.primary} />
                 <View className='gap-1'>
-                  <Text>6093</Text>
+                  <Text>{xp}</Text>
                   <Text>Total XP</Text>
                 </View>
               </View>
@@ -77,11 +89,11 @@ const profile = () => {
               {/* League */}
               <View className='w-[45%] flex-row items-center gap-2 rounded-xl border border-primary px-4 py-3'>
                 <View className="absolute -top-2 right-2 bg-primary px-2 py-1 rounded-md">
-                  <Text className="text-xs font-bold text-white">WEEK 1</Text>
+                  <Text className="text-xs font-bold text-white">WEEK {leagueWeek}</Text>
                 </View>
                 <MaterialCommunityIcons name="trophy-outline" size={24} color={colors.primary} />
                 <View className='gap-1'>
-                  <Text>Ruby</Text>
+                  <Text>{league}</Text>
                   <Text>Current League</Text>
                 </View>
               </View>
@@ -90,8 +102,8 @@ const profile = () => {
               <View className='w-[45%] flex-row items-center gap-2 rounded-xl border border-primary px-4 py-3'>
                 <MaterialIcons name='score' size={24} color={colors.primary} />
                 <View className='gap-1'>
-                  <Text>63</Text>
-                  <Text>English Score</Text>
+                  <Text>{level}</Text>
+                  <Text>{title}</Text>
                 </View>
               </View>
             </View>

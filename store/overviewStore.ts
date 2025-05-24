@@ -12,6 +12,9 @@ export interface overviewState {
   streakFreeze: number;
   streakGoal: number;
   friendStreak: number;
+  league: string;
+  leagueID: string;
+  leagueWeek: number;
   setOverview: (data: Partial<overviewState>) => void;
 }
 
@@ -27,6 +30,9 @@ const overviewStore = create<overviewState>()(
       streakFreeze: 0,
       streakGoal: 0,
       friendStreak: 0,
+      league: "Bronze",
+      leagueID: "",
+      leagueWeek: 0,
       setOverview: (data) => set(data),
     }),
     {

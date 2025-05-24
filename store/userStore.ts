@@ -6,6 +6,7 @@ import fetchUser from "@/services/fetchUser";
 export interface userState {
   id: string;
   name: string;
+  profileUri: String;
   joined: number;
   followers: number;
   following: number;
@@ -18,8 +19,9 @@ const userStore = create<userState>()(
     persist(
       (set) => ({
         id: "",
-        name: "",
+        name: "John Doe",
         joined: Date.now(),
+        profileUri: "",
         followers: 0,
         following: 0,
         loading: false,
