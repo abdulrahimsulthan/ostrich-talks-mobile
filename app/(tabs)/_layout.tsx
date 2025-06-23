@@ -1,9 +1,20 @@
 import { Tabs } from 'expo-router';
 import colors from '@/constants/colors';
 import { Fontisto, MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
-
+import { Text, TouchableOpacity } from 'react-native';
+import appStore from '@/store/appStore';
 
 export default function TabLayout() {
+    const {logout} = appStore()
+    const logoutIcon = () => 
+        <TouchableOpacity 
+            onPress={logout} 
+            className='pr-4 flex-row  items-center gap-2 '
+        >
+            <MaterialIcons name="logout" size={28} color={colors.primary} />
+            <Text>Logout</Text>
+        </TouchableOpacity>
+
     return (
         <Tabs screenOptions={{
             popToTopOnBlur: true,
@@ -36,6 +47,7 @@ export default function TabLayout() {
                 name="profile"
                 options={{
                     title: 'Profile',
+                    headerRight: logoutIcon,
                     tabBarIcon: ({ color }) => <MaterialIcons size={28} name="person" color={color} />
                 }} />
             <Tabs.Screen

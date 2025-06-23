@@ -3,6 +3,7 @@ import { createJSONStorage, persist } from "zustand/middleware";
 import storage from "./storage";
 import login from "@/services/login";
 import sync from "@/services/sync";
+import logout from "@/services/logout";
 
 export interface appState {
   loading: boolean;
@@ -12,6 +13,7 @@ export interface appState {
   onboardingComplete: boolean;
   completeOnboarding: () => void;
   login: () => Promise<void>;
+  logout: () => Promise<void>;
   sync: () => void;
 }
 
@@ -25,6 +27,7 @@ const appStore = create<appState>()(
       onboardingComplete: false,
       completeOnboarding: () => set({ onboardingComplete: true }),
       login: login(set),
+      logout: logout(set),
       sync: sync(set),
     }),
     {
