@@ -1,10 +1,16 @@
 import colors from "@/constants/colors";
+import appStore from "@/store/appStore";
 import overviewStore from "@/store/overviewStore";
 import { MaterialIcons } from "@expo/vector-icons";
-import { Stack } from "expo-router";
+import { Stack, useRouter } from "expo-router";
 import { Text, View } from "react-native";
 
 export default function HomeLayout() {
+    const { loggedIn } = appStore()
+    const router = useRouter()
+
+    if (!loggedIn)
+        setTimeout(() => router.replace('/login') ,500)
     const {feathers} = overviewStore()
     const shopRight = () =>
         <View className="flex-row items-center justify-center gap-2">
