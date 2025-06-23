@@ -1,28 +1,33 @@
 import { View, Text, TouchableOpacity, TextInput } from 'react-native'
 import React, { useRef, useState } from 'react'
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from '@react-native-firebase/auth';
-import { Link, router } from 'expo-router';
+import { router } from 'expo-router';
 import { Image } from 'expo-image';
 
 
-const Login = () => {
+const login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('')
+  const [passwordConfirm, setPasswordConfirm] = useState('')
   const [error, setError] = useState('')
   const emailInputRef = useRef<TextInput>(null);
+  const showError = (err: string) => {
+    setError(err)
+    setTimeout(() => {
+      setError('')
+    }, 1500)
+  }
 
-  const login = async () => {
+  const signup = async () => {
+    if(password!== passwordConfirm) {
+      return showError("Password are not same.")
+    }
     try {
-      await signInWithEmailAndPassword(getAuth(), email, password);
+      await createUserWithEmailAndPassword(getAuth(), email, password);
       router.replace('/home')
     } catch (error) {
-      setError("Incorrect email or password.")
-      setEmail('')
-      setPassword('')
+      showError("Already signed up? please login.")
       emailInputRef.current?.focus()
-      setTimeout(() => {
-        setError('')
-      }, 1500)
       console.log(error)
     }
   }
@@ -46,18 +51,28 @@ const Login = () => {
              border border-black rounded text-left p-2
             `}
           placeholder='Password'
-          keyboardType='visible-password'
+          textContentType='password'
           value={password}
           onChangeText={setPassword}
+        />
+
+        <TextInput className={`
+           my-4 items-center flex-row gap-2
+             border border-black rounded text-left p-2
+            `}
+          placeholder='Confirm password'
+          textContentType='password'
+          value={passwordConfirm}
+          onChangeText={setPasswordConfirm}
         />
 
         {error && <Text className='text-red-500'>{error}</Text>}
 
         <TouchableOpacity
           className='flex-row justify-center bg-primary px-4 py-2 rounded my-4'
-          onPress={login}
+          onPress={signup}
         >
-          <Text className='text-white text-lg'>Login</Text>
+          <Text className='text-white text-lg'>Sign Up</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -65,15 +80,12 @@ const Login = () => {
           onPress={() => { }}
         >
           <Image source={require("@/assets/icons/google.png")} style={{ height: 20, width: 20, borderRadius: 10 }} />
-          <Text className='text-lg'>Sign in with Google</Text>
+          <Text className='text-lg'>Sign Up with Google</Text>
         </TouchableOpacity>
-
-        <Text className='text-center'>Don't have an account <Link className={`text-blue-500`} href={'/signup'}>Sign Up</Link></Text>
-
       </View>
 
     </View>
   )
 }
 
-export default Login
+export default login

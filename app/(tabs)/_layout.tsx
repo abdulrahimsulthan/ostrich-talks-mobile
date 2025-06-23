@@ -2,13 +2,14 @@ import { Tabs } from 'expo-router';
 import colors from '@/constants/colors';
 import { Fontisto, MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 import { Text, TouchableOpacity } from 'react-native';
-import appStore from '@/store/appStore';
+import { getAuth, signOut } from '@react-native-firebase/auth';
 
 export default function TabLayout() {
-    const {logout} = appStore()
-    const logoutIcon = () => 
-        <TouchableOpacity 
-            onPress={logout} 
+    const logoutIcon = () =>
+        <TouchableOpacity
+            onPress={() => {
+                signOut(getAuth()).then(() => console.log('User signed out!'));
+            }}
             className='pr-4 flex-row  items-center gap-2 '
         >
             <MaterialIcons name="logout" size={28} color={colors.primary} />
@@ -18,20 +19,20 @@ export default function TabLayout() {
     return (
         <Tabs screenOptions={{
             popToTopOnBlur: true,
-            tabBarActiveTintColor: colors.primaryDark, 
-            tabBarInactiveTintColor: colors.textSecondary, 
-            tabBarLabelStyle: { fontSize: 12 }, 
-            tabBarStyle: { 
-                backgroundColor: colors.background, 
-                height: 80, 
-                paddingBottom: 10, 
-                paddingTop: 10 
+            tabBarActiveTintColor: colors.primaryDark,
+            tabBarInactiveTintColor: colors.textSecondary,
+            tabBarLabelStyle: { fontSize: 12 },
+            tabBarStyle: {
+                backgroundColor: colors.background,
+                height: 80,
+                paddingBottom: 10,
+                paddingTop: 10
             }
         }}>
             <Tabs.Screen
                 name="home"
                 options={{
-                    headerShown: false, 
+                    headerShown: false,
                     title: 'Home',
                     tabBarIcon: ({ color }) => <MaterialIcons size={28} name="home" color={color} />,
                 }}
@@ -40,8 +41,8 @@ export default function TabLayout() {
                 name="world"
                 options={{
                     title: 'World',
-                    tabBarIcon: ({ color }) => <Fontisto name="world" size={24} color={color}/>
-                }} 
+                    tabBarIcon: ({ color }) => <Fontisto name="world" size={24} color={color} />
+                }}
             />
             <Tabs.Screen
                 name="profile"
@@ -62,7 +63,7 @@ export default function TabLayout() {
                     title: 'Quest',
                     tabBarIcon: ({ color }) => <MaterialCommunityIcons name="treasure-chest" size={28} color={color} />
                 }} />
-            
+
         </Tabs>
     );
 }

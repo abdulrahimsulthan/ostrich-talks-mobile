@@ -1,16 +1,22 @@
 import colors from "@/constants/colors";
-import appStore from "@/store/appStore";
 import overviewStore from "@/store/overviewStore";
 import { MaterialIcons } from "@expo/vector-icons";
-import { Stack, useRouter } from "expo-router";
+import { router, Stack } from "expo-router";
 import { Text, View } from "react-native";
+import { getAuth, onAuthStateChanged } from '@react-native-firebase/auth';
+import { useEffect } from "react";
 
 export default function HomeLayout() {
-    const { loggedIn } = appStore()
-    const router = useRouter()
+    const handleAuthStateChanged = (user: any) => {
+        console.log("authstate",user)
+        if (!user) router.replace('/login')
+    };
 
-    if (!loggedIn)
-        setTimeout(() => router.replace('/login') ,500)
+    useEffect(() => {
+        const subscriber = onAuthStateChanged(getAuth(), handleAuthStateChanged);
+        return subscriber; // unsubscribe on unmount
+    }, []);
+
     const {feathers} = overviewStore()
     const shopRight = () =>
         <View className="flex-row items-center justify-center gap-2">
