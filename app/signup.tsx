@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, TextInput } from 'react-native'
+import { View, Text, TouchableOpacity, TextInput, ActivityIndicator } from 'react-native'
 import React, { useRef, useState } from 'react'
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from '@react-native-firebase/auth';
 import { router } from 'expo-router';
@@ -10,22 +10,26 @@ const login = () => {
   const [password, setPassword] = useState('')
   const [passwordConfirm, setPasswordConfirm] = useState('')
   const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
   const emailInputRef = useRef<TextInput>(null);
   const showError = (err: string) => {
     setError(err)
     setTimeout(() => {
       setError('')
-    }, 1500)
+    }, 2500)
   }
 
   const signup = async () => {
-    if(password!== passwordConfirm) {
+    if (password !== passwordConfirm) {
       return showError("Password are not same.")
     }
     try {
+      setLoading(true)
       await createUserWithEmailAndPassword(getAuth(), email, password);
+      setLoading(false)
       router.replace('/home')
     } catch (error) {
+      setLoading(false)
       showError("Already signed up? please login.")
       emailInputRef.current?.focus()
       console.log(error)
@@ -72,7 +76,11 @@ const login = () => {
           className='flex-row justify-center bg-primary px-4 py-2 rounded my-4'
           onPress={signup}
         >
-          <Text className='text-white text-lg'>Sign Up</Text>
+          {
+            loading
+              ? <ActivityIndicator color="white" />
+              : <Text className='text-white text-lg'>Sign Up</Text>
+          }
         </TouchableOpacity>
 
         <TouchableOpacity
