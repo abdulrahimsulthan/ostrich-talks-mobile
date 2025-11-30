@@ -1,50 +1,80 @@
-# Welcome to your Expo app 👋
+# Ostrich Talks
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Welcome to the Ostrich Talks repository! This project is a full-featured communication learning platform built for cross platforms Android and iOS using React Native Expo,. This robust App includes level design, followers and following, leader board (league), streak, rewards, quests for engagement of playing levels to improve communications and behaviour of user.
 
-## Get started
+# App Design
+## Streak
+A streak is represent a decipline but here we have five levels for each day so it give motivation to do more on a single day 
+- streak 1: Fiery Streak!
+- streak 2: Blazer streak!
+- streak 3: Turbo streak!
+- streak 4: Inferno streak!
+- streak 5: Supernova streak.
 
-1. Install dependencies
+A banner in the top give a motivation to achieve next streak. once reached streak 5 banner should say congrats and do more.
 
-   ```bash
-   npm install
-   ```
+## Leader Board ( League )
+There are 10 Leagues each will have 20 person in the leaderboard, Users are segregated according to various factors to stay in the leaderboard (Sort users according to theire xp levels accumulated within a week)
+<br>
+<br>
+Each Week user should be promoted to next League or demoted to lower league or stay in the same league according to their performance and xp levels
 
-2. Start the app
+### League Levels
+1. Bronze
+2. Silver
+3. Gold
+4. Platinum
+5. Diamond
+6. Master
+7. Grand Master
+8. Challenger
+9. Iron
+10. Emerald
 
-   ```bash
-    npx expo start
-   ```
+## Rewards 
+Each small and big wins are celeberated and given batch for the achievements to stay user motivated 
+<br>
+<br>
+Daily and Weekly quest are used to hook the user to perform better training and get rewards 
 
-In the output, you'll find options to open the app in a
+## Profile 
+Profile page have a avatar for user it can be customised like snapchat this avatar was used in the leaderboards and levels storyline 
+<br>
+<br>
+For social activities user have followers and following friends options so each rewards and batchs are used to flex with friends and motivate both to do more lessions and learn and improve themselves
+<br>
+<br>
+Friend suggestions are done using their contact they give permission or suggestion based on various factors like location
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Authentication 
+For authentication we can rely on Firebase Auth right now. for reducing headache
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Voice Levels validations
+check the input audio and convert it into text then verify against answer text for vocal strength and grammatical error then respond the result of validation
 
-## Get a fresh project
+## Alter Ego (Featured)
+Not yet fully derived idea!
+For each user there is one or more alter ego created according to their behaviour. this will be available during lession story line it will give some idealogy when doing lessions to improve their behaviour unconciously
 
-When you're ready, run:
+# Tech Stack
+This tech stack includes expo related tools, installed plugins and tools, Internal tools for both Android and iOS.
 
-```bash
-npm run reset-project
-```
+## Expo
+- Typescript v5.3.3
+- Expo SDK 52 v52.0.37
+- React v18.3.1
+- React Native v0.76.7
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Plugins & Tools
+- nativewind v4.1.23 (tailwindcss 3.4.17)
+- react-native-firebase v22.2.0
+- zustand v4.5.7
+- react-native-mmkv v3.2.0
+- axios v1.9.0
 
-## Learn more
+## Android Specs
+- Android gradle plugin: 8.6.0
+- Gradle: 8.10.2
 
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## iOS Specs
+- unknown
