@@ -10,7 +10,8 @@ export default {
         newArchEnabled: true,
         ios: {
             supportsTablet: true,
-            bundleIdentifier: "com.abdulrahimsulthan.ostrichtalks"
+            bundleIdentifier: "com.abdulrahimsulthan.ostrichtalks",
+            googleServicesFile: "./GoogleService-Info.plist",
         },
         android: {
             adaptiveIcon: {
@@ -27,6 +28,9 @@ export default {
         },
         plugins: [
             "expo-router",
+            "expo-font",
+            "@react-native-firebase/app",
+            "@react-native-firebase/auth",
             [
                 "expo-splash-screen",
                 {
