@@ -2,7 +2,8 @@ import { Tabs } from 'expo-router';
 import colors from '@/constants/colors';
 import { Fontisto, MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 import { ActivityIndicator, Text, TouchableOpacity } from 'react-native';
-import { getAuth, signOut } from '@react-native-firebase/auth';
+// #removed-rn-firebase
+// import { getAuth, signOut } from '@react-native-firebase/auth';
 import appStore from '@/store/appStore';
 
 export default function TabLayout() {
@@ -10,8 +11,8 @@ export default function TabLayout() {
     const logoutIcon = () =>
         <TouchableOpacity
             onPress={() => {
-                setLoading(true)
-                signOut(getAuth()).then(() => setLoading(false));
+                // setLoading(true)
+                // signOut(getAuth()).then(() => setLoading(false));
             }}
             className='pr-4 flex-row  items-center gap-2 '
         >
