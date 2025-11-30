@@ -56,6 +56,17 @@ check the input audio and convert it into text then verify against answer text f
 Not yet fully derived idea!
 For each user there is one or more alter ego created according to their behaviour. this will be available during lession story line it will give some idealogy when doing lessions to improve their behaviour unconciously
 
+# Kick start guide
+
+## Get ignored files 
+### Setup a firebase console and get these files
+ - ostrich-talks-firebase-adminsdk-*.json
+ - google-services.json
+ - GoogleService-Info.plist
+ - credentials.json
+## Prebuild for Android and iOS
+
+
 # Tech Stack
 This tech stack includes expo related tools, installed plugins and tools, Internal tools for both Android and iOS.
 
