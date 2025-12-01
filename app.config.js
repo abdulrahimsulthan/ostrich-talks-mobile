@@ -39,6 +39,12 @@ export default {
                     resizeMode: "contain",
                     backgroundColor: "#ffffff"
                 }
+            ],
+            [
+                "expo-audio",
+                {
+                    "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone."
+                }
             ]
         ],
         experiments: {
