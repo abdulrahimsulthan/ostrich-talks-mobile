@@ -64,8 +64,12 @@ For each user there is one or more alter ego created according to their behaviou
  - google-services.json
  - GoogleService-Info.plist
  - credentials.json
-## Prebuild for Android and iOS
+## build for Android and iOS
+`npx expo prebuild --clean` <br>
+`npm run android` <br>
+`npm run ios`
 
+<br>
 
 # Tech Stack
 This tech stack includes expo related tools, installed plugins and tools, Internal tools for both Android and iOS.
