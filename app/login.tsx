@@ -1,7 +1,6 @@
 import { View, Text, TouchableOpacity, TextInput, ActivityIndicator } from 'react-native'
 import React, { useRef, useState } from 'react'
-// #removed-rn-firebase
-// import { getAuth, signInWithEmailAndPassword } from '@react-native-firebase/auth';
+import { getAuth, signInWithEmailAndPassword } from '@react-native-firebase/auth';
 import { Link, router } from 'expo-router';
 import { Image } from 'expo-image';
 
@@ -15,7 +14,7 @@ const Login = () => {
   const login = async () => {
     setLoading(true)
     try {
-      // await signInWithEmailAndPassword(getAuth(), email, password);
+      await signInWithEmailAndPassword(getAuth(), email, password);
       setLoading(false)
       router.replace('/home')
     } catch (error) {

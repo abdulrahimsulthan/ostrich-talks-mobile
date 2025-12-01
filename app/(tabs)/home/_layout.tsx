@@ -3,20 +3,19 @@ import overviewStore from "@/store/overviewStore";
 import { MaterialIcons } from "@expo/vector-icons";
 import { router, Stack } from "expo-router";
 import { Text, View } from "react-native";
-// #removed-rn-firebase
-// import { getAuth, onAuthStateChanged } from '@react-native-firebase/auth';
-// import { useEffect } from "react";
+import { getAuth, onAuthStateChanged } from '@react-native-firebase/auth';
+import { useEffect } from "react";
 
 export default function HomeLayout() {
-    // const handleAuthStateChanged = (user: any) => {
-    //     console.log("authstate",user)
-    //     if (!user) router.replace('/login')
-    // };
+    const handleAuthStateChanged = (user: any) => {
+        console.log("authstate",user)
+        if (!user) router.replace('/login')
+    };
 
-    // useEffect(() => {
-    //     const subscriber = onAuthStateChanged(getAuth(), handleAuthStateChanged);
-    //     return subscriber; // unsubscribe on unmount
-    // }, []);
+    useEffect(() => {
+        const subscriber = onAuthStateChanged(getAuth(), handleAuthStateChanged);
+        return subscriber; // unsubscribe on unmount
+    }, []);
 
     const {feathers} = overviewStore()
     const shopRight = () =>

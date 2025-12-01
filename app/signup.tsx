@@ -1,7 +1,6 @@
 import { View, Text, TouchableOpacity, TextInput, ActivityIndicator } from 'react-native'
 import React, { useRef, useState } from 'react'
-//#removed-rn-firebase
-// import { getAuth, createUserWithEmailAndPassword } from '@react-native-firebase/auth';
+import { getAuth, createUserWithEmailAndPassword } from '@react-native-firebase/auth';
 import { router } from 'expo-router';
 import { Image } from 'expo-image';
 
@@ -26,7 +25,7 @@ const login = () => {
     }
     try {
       setLoading(true)
-      // await createUserWithEmailAndPassword(getAuth(), email, password);
+      await createUserWithEmailAndPassword(getAuth(), email, password);
       setLoading(false)
       router.replace('/home')
     } catch (error) {
